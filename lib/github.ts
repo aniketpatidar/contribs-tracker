@@ -1,7 +1,10 @@
 export async function fetchContributions(username: string) {
   async function gh(url: string) {
     const res = await fetch(url);
-    if (!res.ok) throw new Error('GitHub API error');
+    if (!res.ok) {
+      console.error(`GitHub API Error: ${res.status} ${res.statusText} for URL: ${url}`);
+      throw new Error(`GitHub API error: ${res.status}`);
+    }
     return res.json();
   }
 

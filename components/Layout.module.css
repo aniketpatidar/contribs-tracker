@@ -1,0 +1,116 @@
+.container {
+  min-height: 100vh;
+  transition: background-color 0.5s ease;
+  padding: 3rem 5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.main {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.headerSpacer {
+  height: 20px;
+}
+
+.logoContainer {
+  margin-bottom: 1.5rem;
+}
+
+.logoText {
+  font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+  font-size: 3.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.shapesContainer {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.shape {
+  display: inline-block;
+  height: 0.5em;
+  width: 0.5em;
+}
+
+.shapeTriangleLeft {
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}
+
+.shapeTriangleDown {
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.shapeSquare {}
+
+.filterRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filterLabel {
+  font-size: 1.2rem;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+.repoSelect {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s;
+  min-width: 200px;
+  opacity: 0.8;
+}
+
+.repoSelect:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.repoSelect option {
+  background: #e9f088;
+  color: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .logoText {
+    font-size: 2.2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .filterRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .filterLabel {
+    font-size: 1.1rem;
+  }
+
+  .repoSelect {
+    width: 100%;
+  }
+}
