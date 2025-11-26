@@ -30,8 +30,6 @@
   left: 0;
   width: 100%;
   margin-top: 4px;
-  background: #e9f088;
-  /* Match theme bg */
   border: 1px solid #1a1a1a;
   border-radius: 4px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -61,8 +59,8 @@
 .arrow {
   width: 10px;
   height: 10px;
-  border-right: 2px solid #1a1a1a;
-  border-bottom: 2px solid #1a1a1a;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
   transform: rotate(45deg) translateY(-2px);
   transition: transform 0.2s;
   margin-left: 10px;

@@ -16,6 +16,9 @@
 
 .logoContainer {
   margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logoText {
@@ -49,8 +52,6 @@
 .shapeTriangleDown {
   clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
-
-.shapeSquare {}
 
 .filterRow {
   display: flex;
@@ -112,5 +113,68 @@
 
   .repoSelect {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .logoText {
+    font-size: 1.8rem;
+  }
+
+  .headerSpacer {
+    height: 10px;
+  }
+
+  .logoContainer {
+    margin-bottom: 1rem;
+  }
+}
+
+.themeSwitcher {
+  width: auto;
+  height: auto;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, background-color 0.2s;
+  z-index: 1000;
+  margin-top: 0.5rem;
+}
+
+.themeSwitcher:hover {
+  transform: scale(1.05);
+}
+
+.themeSwitcher:active {
+  transform: scale(0.95);
+}
+
+.themeSwitcher svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.shuffleIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (min-width: 1280px) {
+  .themeSwitcher {
+    padding: 1rem;
+  }
+
+  .shuffleIcon {
+    width: 2rem;
+    height: 2rem;
   }
 }

@@ -6,9 +6,11 @@ type DropdownProps = {
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
+  bgColor?: string;
+  textColor?: string;
 };
 
-const Dropdown: React.FC<DropdownProps> = ({ options, value, onChange, placeholder = 'Select...' }) => {
+const Dropdown: React.FC<DropdownProps> = ({ options, value, onChange, placeholder = 'Select...', bgColor, textColor }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -37,19 +39,18 @@ const Dropdown: React.FC<DropdownProps> = ({ options, value, onChange, placehold
       <button
         className={styles.dropdownButton}
         onClick={() => setIsOpen(!isOpen)}
-        aria-expanded={isOpen}
+        style={{ color: textColor, borderColor: textColor }}
       >
-        <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-          {displayValue}
-        </span>
-        <span className={styles.arrow}></span>
+        {value === 'all' ? 'All repositories' : value}
+        <span className={styles.arrow} style={{ borderRightColor: textColor, borderBottomColor: textColor }}></span>
       </button>
 
       {isOpen && (
-        <div className={styles.dropdownMenu}>
+        <div className={styles.dropdownMenu} style={{ backgroundColor: bgColor, color: textColor, borderColor: textColor }}>
           <div
             className={`${styles.dropdownItem} ${value === 'all' ? styles.selected : ''}`}
             onClick={() => handleSelect('all')}
+            style={{ color: textColor }}
           >
             All repositories
           </div>
@@ -58,6 +59,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, value, onChange, placehold
               key={option}
               className={`${styles.dropdownItem} ${value === option ? styles.selected : ''}`}
               onClick={() => handleSelect(option)}
+              style={{ color: textColor }}
             >
               {option}
             </div>
