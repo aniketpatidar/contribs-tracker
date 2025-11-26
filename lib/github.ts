@@ -1,6 +1,15 @@
 export async function fetchContributions(username: string) {
   async function gh(url: string) {
-    const res = await fetch(url);
+    const headers: HeadersInit = {
+      'Accept': 'application/vnd.github.v3+json',
+    };
+
+    const token = process.env.GITHUB_TOKEN;
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
+
+    const res = await fetch(url, { headers });
     if (!res.ok) {
       console.error(`GitHub API Error: ${res.status} ${res.statusText} for URL: ${url}`);
       throw new Error(`GitHub API error: ${res.status}`);
